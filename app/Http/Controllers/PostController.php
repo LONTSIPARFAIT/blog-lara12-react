@@ -38,5 +38,9 @@ class PostController extends Controller
             $Path = $request->file('image')->store('posts', 'public');
             $post->image = $Path;
         }
+        
+        $post->save();
+
+        return redirect()->route('dashboard')->with('success', );
     }
 }
