@@ -83,9 +83,9 @@ class PostController extends Controller
         return redirect()->route('dashboard')->with('success', 'Post mis à jour avec succès');
     }
 
-    public destroy()
+    public destroy(Post $post)
     {
-        
+        if
     }
 
 }
