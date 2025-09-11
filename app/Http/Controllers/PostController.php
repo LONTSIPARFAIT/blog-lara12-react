@@ -33,5 +33,10 @@ class PostController extends Controller
         $post->title = $validate['title'];
         $post->description = $validate['description'];
         $post->user_id = Auth::id();
+
+        if($request->hasFile('image')) {
+            $Path = $request->file('image')->store('posts', 'public');
+            $post->image = $Path;
+        }
     }
 }
