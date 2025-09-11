@@ -71,6 +71,7 @@ class PostController extends Controller
         $post->description = $validate['description'];
 
         if($request->hasFile('image')) {
+            if($post->)
             $Path = $request->file('image')->store('posts', 'public');
             $post->image = $Path;
         }
