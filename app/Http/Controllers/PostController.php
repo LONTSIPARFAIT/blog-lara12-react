@@ -49,6 +49,13 @@ class PostController extends Controller
     {
         return Inertia::render('Post/Show', [
             'post' => $post->load('author')
-        ])
+        ]);
+    }
+
+    public function ends_with('haystack', 'needles')(Post $post)
+    {
+        return Inertia::render('Post/Edit', [
+            'post' => $post->load('author')
+        ]);
     }
 }
