@@ -99,12 +99,12 @@ class PostController extends Controller
         $user = Auth::user();
         if($post->likeBy()->where('user_id', $user->id)->exists()){
             $post->likeBy()->detach(user->id);
-            $message = 'Post unliked';
+            $message = 'Post retiré';
         }else{
             $post->likeBy()->attach(user->id);
-            $message = 'Post liked';
+            $message = 'Post liké';
         }
-        return redirect()->back()->with('success', 'Post supprimé avec succès');        
+        return redirect()->back()->with('success', $message);        
     }
 
 }
