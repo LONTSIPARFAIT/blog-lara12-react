@@ -1,4 +1,4 @@
-import { PageProps } from '@/types'
+import { Auth } from '@/types'
 
 export interface Author {
     id: number
@@ -24,21 +24,22 @@ export interface PostsFormData {
     image: File | null
 }
 
-export interface DashboardProps extends PageProps {
+export interface DashboardProps extends Auth {
     userPosts: Post[]
 }
 
-export interface CreateProps extends PageProps {}
+export interface CreateProps extends Auth {}
 
-export interface EditProps extends PageProps {
+export interface EditProps extends Auth {
     post: Post
 }
 
-export interface ShowProps extends PageProps {
+export interface ShowProps extends Auth {
     post: Post
 }
 
 export interface Props {
     posts: Post[]
     showAuthor ?: boolean
+    CanEdit ?: boolean
 }
