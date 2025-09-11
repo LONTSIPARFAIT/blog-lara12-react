@@ -11,7 +11,7 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
         return Inertia::render('dashboard',[
-            'usersPosts' => Auth::user()->post()->with('author')->latest()->get()
+            'usersPosts' => Auth::user()->posts()->with('author')->latest()->get()
         ]);
     })->name('dashboard');
 });
