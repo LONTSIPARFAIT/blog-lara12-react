@@ -22,5 +22,11 @@ class PostController extends Controller
         if(!Auth::check()){
             abort(403);
         }
-    }       
+
+        $validate = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image' => 'nullable|image',
+        ]);
+    }
 }
