@@ -31,6 +31,6 @@ class PostController extends Controller
 
         $post = new Post();
         $post->title = $validate['title'];
-        $post->d = $validate['title'];
+        $post->description = $validate['description'];
     }
 }
