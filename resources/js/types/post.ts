@@ -13,5 +13,20 @@ export interface Post {
     created_at: string
     author: Author
     is_liked: boolean
-    like_counter
+    like_counter: number
+    user_id: number
+}
+
+export interface PostsFormData {
+    [key: string]: string | File | null
+    title: string
+    description: string
+    image: File | null
+}
+
+export interface DashboardProps extends PageProps {
+    userPosts: Post[]
+}
+
+export interface CreateProps extends PageProps {
 }
