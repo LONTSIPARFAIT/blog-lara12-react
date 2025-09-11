@@ -32,5 +32,6 @@ class PostController extends Controller
         $post = new Post();
         $post->title = $validate['title'];
         $post->description = $validate['description'];
+        $post->user_id = Auth::id();
     }
 }
