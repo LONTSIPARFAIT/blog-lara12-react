@@ -20,8 +20,8 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
-        
-        Schema::create('posts', function (Blueprint $table) {
+
+        Schema::create('post_likes', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->text('description');
