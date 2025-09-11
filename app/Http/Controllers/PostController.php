@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
 use App\Models\Post;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -39,7 +40,7 @@ class PostController extends Controller
             $Path = $request->file('image')->store('posts', 'public');
             $post->image = $Path;
         }
-        
+
         $post->save();
 
         return redirect()->route('dashboard')->with('success', 'Post crée avec succès');
@@ -59,7 +60,7 @@ class PostController extends Controller
         ]);
     }
 
-        public function update(Request $request)
+    public function update(Request $request, Post $post)
     {
         $validate = $request->validate([
             'title' => 'required|string|max:255',
@@ -77,13 +78,13 @@ class PostController extends Controller
             $Path = $request->file('image')->store('posts', 'public');
             $post->image = $Path;
         }
-        
+
         $post->save();
 
         return redirect()->route('dashboard')->with('success', 'Post mis à jour avec succès');
     }
 
-    public destroy(Post $post)
+    public function destroy(Post $post)
     {
         if($post->image){
             Storage::disk('public')->delete($post->image);
@@ -98,13 +99,13 @@ class PostController extends Controller
     {
         $user = Auth::user();
         if($post->likeBy()->where('user_id', $user->id)->exists()){
-            $post->likeBy()->detach(user->id);
+            $post->likeBy()->detach($user->id);
             $message = 'Post retiré';
         }else{
-            $post->likeBy()->attach(user->id);
+            $post->likeBy()->attach($user->id);
             $message = 'Post liké';
         }
-        return redirect()->back()->with('success', $message);        
+        return redirect()->back()->with('success', $message);
     }
 
 }
