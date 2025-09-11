@@ -1,4 +1,4 @@
-import {PageProps} from '@/types'
+import { PageProps } from '@/types'
 
 export interface Author {
     id: number
@@ -39,5 +39,6 @@ export interface ShowProps extends PageProps {
 }
 
 export interface Props {
-    post: Post
+    posts: Post[]
+    showAuthor ?: boolean
 }
