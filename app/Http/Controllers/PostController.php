@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
+use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -42,5 +43,10 @@ class PostController extends Controller
         $post->save();
 
         return redirect()->route('dashboard')->with('success', 'Post crée avec succès');
+    }
+
+    public function show(Post $post)
+    {
+        return Inertia::render('Post/Show')
     }
 }
