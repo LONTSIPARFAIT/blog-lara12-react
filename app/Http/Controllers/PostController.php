@@ -61,10 +61,6 @@ class PostController extends Controller
 
         public function update(Request $request)
     {
-        if(!Auth::check()){
-            abort(403);
-        }
-
         $validate = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
