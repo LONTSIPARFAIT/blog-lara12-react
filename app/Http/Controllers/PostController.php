@@ -104,6 +104,7 @@ class PostController extends Controller
             $post->likeBy()->attach(user->id);
             $message = 'Post liked';
         }
+        return redirect()->back()->with('success', 'Post supprimé avec succès');        
     }
 
 }
