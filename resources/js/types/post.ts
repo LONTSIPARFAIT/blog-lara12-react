@@ -37,3 +37,7 @@ export interface EditProps extends PageProps {
 export interface ShowProps extends PageProps {
     post: Post
 }
+
+export interface Props {
+    post: Post
+}
