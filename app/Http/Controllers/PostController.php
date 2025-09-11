@@ -91,7 +91,7 @@ class PostController extends Controller
 
         $post->delete();
 
-        return redirect()->back()->with('success', 'Post supprimé avec succès')
+        return redirect()->back()->with('success', 'Post supprimé avec succès');
     }
 
     public function like(Post $post)
@@ -102,6 +102,7 @@ class PostController extends Controller
             $message = 'Post unliked';
         }else{
             $post->likeBy()->attach(user->id);
+            $message = 'Post liked';
         }
     }
 
