@@ -67,10 +67,8 @@ class PostController extends Controller
             'image' => 'nullable|image`|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $post = new Post();
         $post->title = $validate['title'];
         $post->description = $validate['description'];
-        $post->user_id = Auth::id();
 
         if($request->hasFile('image')) {
             $Path = $request->file('image')->store('posts', 'public');
