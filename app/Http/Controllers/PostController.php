@@ -97,6 +97,12 @@ class PostController extends Controller
     public function like(Post $post)
     {
         $user = Auth::user();
+        if($post->likeBy()->where('user_id', $user->id)->exists()){
+            $post->likeBy()->detach(user->id);
+            $message = 'Post unliked';
+        }else{
+            $post->likeBy()->attach(user->id);
+        }
     }
 
 }
