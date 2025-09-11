@@ -88,6 +88,8 @@ class PostController extends Controller
         if($post->image){
             Storage::disk('public')->delete($post->image);
         }
+
+        $post->delete();
     }
 
 }
