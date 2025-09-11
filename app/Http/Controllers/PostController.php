@@ -59,6 +59,31 @@ class PostController extends Controller
         ]);
     }
 
+        public function update(Request $request)
+    {
+        if(!Auth::check()){
+            abort(403);
+        }
 
-    
+        $validate = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image' => 'nullable|image`|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $post = new Post();
+        $post->title = $validate['title'];
+        $post->description = $validate['description'];
+        $post->user_id = Auth::id();
+
+        if($request->hasFile('image')) {
+            $Path = $request->file('image')->store('posts', 'public');
+            $post->image = $Path;
+        }
+        
+        $post->save();
+
+        return redirect()->route('dashboard')->with('success', 'Post crée avec succès');
+    }
+
 }
