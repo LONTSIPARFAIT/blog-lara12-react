@@ -52,7 +52,7 @@ class PostController extends Controller
         ]);
     }
 
-    public function ends_with('haystack', 'needles')(Post $post)
+    public function edit(Post $post)
     {
         return Inertia::render('Post/Edit', [
             'post' => $post->load('author')
