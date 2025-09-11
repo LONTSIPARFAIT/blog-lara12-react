@@ -94,4 +94,9 @@ class PostController extends Controller
         return redirect()->back()->with('success', 'Post supprimé avec succès')
     }
 
+    public function like(Post $post)
+    {
+        $user = Auth::user();
+    }
+
 }
