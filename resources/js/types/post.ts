@@ -28,5 +28,12 @@ export interface DashboardProps extends PageProps {
     userPosts: Post[]
 }
 
-export interface CreateProps extends PageProps {
+export interface CreateProps extends PageProps {}
+
+export interface EditProps extends PageProps {
+    post: Post
+}
+
+export interface ShowProps extends PageProps {
+    post: Post
 }
