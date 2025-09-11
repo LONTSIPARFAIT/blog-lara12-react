@@ -29,6 +29,8 @@ class PostController extends Controller
             'image' => 'nullable|image`|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        
+        $post = new Post();
+        $post->title = $validate['title'];
+        $post->d = $validate['title'];
     }
 }
