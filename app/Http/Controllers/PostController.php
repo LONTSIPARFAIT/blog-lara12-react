@@ -80,7 +80,7 @@ class PostController extends Controller
         
         $post->save();
 
-        return redirect()->route('dashboard')->with('success', 'Post crée avec succès');
+        return redirect()->route('dashboard')->with('success', 'Post mis à jour avec succès');
     }
 
 }
