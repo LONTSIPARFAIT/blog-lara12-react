@@ -1,13 +1,12 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render('welcome');
-})->name('home');
+Route::get('/', [WelcomeController::class, 'index']);
 // Route::get('/', action: function () {
 //     return Inertia::render('welcome');
 // })->name('home');
