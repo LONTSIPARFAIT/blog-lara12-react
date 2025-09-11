@@ -72,7 +72,7 @@ class PostController extends Controller
 
         if($request->hasFile('image')) {
             if($post->image){
-                S
+                Storage::disk('public')->delete($post->image);
             }
             $Path = $request->file('image')->store('posts', 'public');
             $post->image = $Path;
