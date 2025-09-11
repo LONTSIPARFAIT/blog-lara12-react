@@ -17,7 +17,17 @@ return new class extends Migration
             $table->text('description');
             $table->string('image')->nullable();
             $table->integer('likes')->default(0);
-            $table->timestamp('email_verified_at')->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->timestamps();
+        });
+        
+        Schema::create('posts', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->text('description');
+            $table->string('image')->nullable();
+            $table->integer('likes')->default(0);
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
