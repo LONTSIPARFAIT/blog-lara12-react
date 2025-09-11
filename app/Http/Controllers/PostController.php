@@ -85,7 +85,9 @@ class PostController extends Controller
 
     public destroy(Post $post)
     {
-        if
+        if($post->image){
+            d
+        }
     }
 
 }
