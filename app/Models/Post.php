@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
@@ -31,6 +32,10 @@ class Post extends Model
 
     public function getIsLikedAttribute() : bool
     {
-        return Auth::check() && $this->likedBy->contains('id', Auth::id())
+        return Auth::check() && $this->likedBy->contains('id', Auth::id());
+    }
+    public function getLikedCountAttribute() : int
+    {
+        return $this->likedBy->count();
     }
 }
