@@ -19,10 +19,10 @@ export default function Nav() {
                   </Link>
                 ) : (
                   <>
-                    <Link href="/login" className="text-gray-900 hover:text-indigo-600">
+                    <Link href={route('/login')} className="text-gray-900 hover:text-indigo-600">
                       Connexion
                     </Link>
-                    <Link href="/register" className="inline-flex items-center px-4 py-2 border text-sm font-medium rounded-md text-white bg-indigo-600  hover:bg-indigo-700">
+                    <Link href={route('/register')} className="inline-flex items-center px-4 py-2 border text-sm font-medium rounded-md text-white bg-indigo-600  hover:bg-indigo-700">
                       Inscription
                     </Link>
                   </>
