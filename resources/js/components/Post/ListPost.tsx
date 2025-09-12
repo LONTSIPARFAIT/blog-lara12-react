@@ -1,7 +1,7 @@
 import { Post, Props } from '@/types/post';
 import { usePage, router, Link } from '@inertiajs/react';
 import { useState } from 'react';
-import { Card, CardHeader } from '../ui/card';
+import { Card, CardContent, CardHeader } from '../ui/card';
 
 export default function ListPost({posts, showAuthor = true} : Props) {
 
@@ -52,7 +52,12 @@ export default function ListPost({posts, showAuthor = true} : Props) {
                 </h3>
             </CardHeader>
 
-            <CardContainer></CardContainer>
+            <CardContent>
+                <p className='mb-4 line-clamp-3 text-gray-600'>
+                    {post.description}
+                </p>
+                <div className=""></div>
+            </CardContent>
             
         </Card>
       ))}
