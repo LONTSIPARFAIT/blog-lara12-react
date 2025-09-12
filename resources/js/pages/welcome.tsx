@@ -4,7 +4,9 @@ import { register } from '@/routes';
 import Nav from '@/components/nav';
 import { Post } from '@/types/post';
 
-export default function welcome(auth, posts, canRegister) : PageProps< {posts: Post[], canRegister: boolean }> {
+export default function welcome({ auth, posts, canRegister }: PageProps<{ posts: Post[], canRegister: boolean }>) {
+  console.log('Auth User:', auth.user);
+console.log('Can Register:', canRegister);
   return (
     <>
         <Head title='Welcome' />
@@ -31,6 +33,8 @@ export default function welcome(auth, posts, canRegister) : PageProps< {posts: P
               </div>
             </div>
           </div>
+
+          .
 
         </div>
         
