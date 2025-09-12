@@ -56,7 +56,7 @@ export default function ListPost({posts, showAuthor = true} : Props) {
                 <p className='mb-4 line-clamp-3 text-gray-600'>
                     {post.description}
                 </p>
-                <div className=""></div>
+                <div className="flex justify-between items-center text-sm text-gray-500"></div>
             </CardContent>
             
         </Card>
