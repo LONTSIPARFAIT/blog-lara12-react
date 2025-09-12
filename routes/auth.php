@@ -11,21 +11,25 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
+
+    // Affiche le formulaire d'inscription
     Route::get('register', [RegisteredUserController::class, 'create'])
         ->name('register');
-
+    // Traite l'inscription de l'utilisateur
     Route::post('register', [RegisteredUserController::class, 'store'])
         ->name('register.store');
 
+    // Affiche le formulaire de connexion
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
         ->name('login');
-
+    // Traite la connexion de l'utilisateur
     Route::post('login', [AuthenticatedSessionController::class, 'store'])
         ->name('login.store');
 
+    // Affiche le formulaire de demande de réinitialisation de mot de passe
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
         ->name('password.request');
-
+    // Traite la demande de réinitialisation de mot de passe
     Route::post('forgot-password', [PasswordResetLinkController::class, 'store'])
         ->name('password.email');
 
@@ -36,6 +40,7 @@ Route::middleware('guest')->group(function () {
         ->name('password.store');
 });
 
+// Routes accessibles uniquement aux utilisateurs authentifiés
 Route::middleware('auth')->group(function () {
     Route::get('verify-email', EmailVerificationPromptController::class)
         ->name('verification.notice');
