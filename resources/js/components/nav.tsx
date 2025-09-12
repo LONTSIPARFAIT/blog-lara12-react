@@ -1,7 +1,7 @@
 import { Link, usePage } from '@inertiajs/react'; 
 
 export default function Nav() {
-    const { url } = usePage();
+    const { auth } = usePage().props;
   return (
     <div>
       Nav
