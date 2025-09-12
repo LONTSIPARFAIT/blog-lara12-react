@@ -1,7 +1,7 @@
 import { Post, Props } from '@/types/post';
 import { usePage, router, Link } from '@inertiajs/react';
 import { useState } from 'react';
-import { Card } from '../ui/card';
+import { Card, CardHeader } from '../ui/card';
 
 export default function ListPost({posts, showAuthor = true} : Props) {
 
@@ -43,9 +43,17 @@ export default function ListPost({posts, showAuthor = true} : Props) {
         <Card key={post.id} className='overflow-hidden'>
             {post.image && (
                 <div className="aspect-w-16 aspect-h-9">
-                    <img src="" alt="" />
+                    <img src={`/Storage/${post.image}`} alt={post.title} className='object-cover w-full h-14' />
                 </div>
             )}
+            <CardHeader>
+                <h3 className='text-xl font-semibold text-gray-800'>
+                    {post.title}
+                </h3>
+            </CardHeader>
+
+            <CardContainer></CardContainer>
+            
         </Card>
       ))}
     </div>
