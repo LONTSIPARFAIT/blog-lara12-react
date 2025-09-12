@@ -20,6 +20,9 @@ export default function welcome(auth, posts, canRegister) : PageProps< {posts: P
                 <p className="mt-3 max-w-md mx-auto text-gray-500">
                  Explorez des articles variés sur la culture, la technologie et le bien-être. Rejoignez notre communauté et partagez vos idées !
                 </p>
+                {!auth.user && canRegister && (
+                  .
+                )}
               </div>
             </div>
           </div>
