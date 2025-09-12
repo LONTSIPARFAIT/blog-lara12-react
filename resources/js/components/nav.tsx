@@ -4,13 +4,30 @@ export default function Nav() {
     const { auth } = usePage().props as any;
   return (
     <>
-      <nav className="bg-white shadow-md border-b py-2 px-2 ">
+      <nav className="bg-white shadow-md border-b py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16">
               <div className="flex items-center">
                 <Link href="/" className="text-2xl font-black text-indigo-600">
                   MyApp
                  </Link> 
+              </div>
+              <div className="flex items-center space-x-4">
+                { auth.user ? (
+                  <Link href={route('/dasboard')} className="inline-flex items-center px-4 py-2 border text-sm font-medium rounded-md text-gray-800 hover:text-indigo-600">
+                    Dashboard
+                  </Link>
+                ) : (
+                  <>
+                    <Link href="/login" className="text-gray-800 hover:text-indigo-600">
+                      Login
+                    </Link>
+                    <Link href="/register" className="text-gray-800 hover:text-indigo-600">
+                      Register
+                    </Link>
+                  </>
+                )
+                    }
               </div>
             </div>
         </div>
