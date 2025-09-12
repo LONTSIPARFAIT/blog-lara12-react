@@ -1,5 +1,6 @@
 import PageProps from '@/types';
 import { Head, Link } from '@inertiajs/react'; 
+import { register } from '@/routes';
 import Nav from '@/components/nav';
 import { Post } from '@/types/post';
 
@@ -21,7 +22,11 @@ export default function welcome(auth, posts, canRegister) : PageProps< {posts: P
                  Explorez des articles variés sur la culture, la technologie et le bien-être. Rejoignez notre communauté et partagez vos idées !
                 </p>
                 {!auth.user && canRegister && (
-                  .
+                  <div className="mt-5 max-w-md mx-auto flex sm:justify-center md:mt-8">
+                    <div className='rounded-md shadow-md'>
+                      <Link href={register()} className="inline-flex items-center px-4 py-2 border text-sm font-medium rounded-md text-white bg-indigo-600  hover:bg-indigo-700">Commencer</Link>
+                    </div>
+                  </div>
                 )}
               </div>
             </div>
