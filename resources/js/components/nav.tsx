@@ -19,10 +19,10 @@ export default function Nav() {
                   </Link>
                 ) : (
                   <>
-                    <Link href={route('/dasboard')} className="inline-flex items-center px-4 py-2 border text-sm font-medium rounded-md text-white bg-indigo-600  hover:bg-indigo-700">
+                    <Link href="/login" className="text-gray-800 hover:text-indigo-600">
                       Connexion
                     </Link>
-                    <Link href={route('/dasboard')} className="inline-flex items-center px-4 py-2 border text-sm font-medium rounded-md text-white bg-indigo-600  hover:bg-indigo-700">
+                    <Link href="/register" className="text-gray-800 hover:text-indigo-600">
                       Inscription
                     </Link>
                   </>
