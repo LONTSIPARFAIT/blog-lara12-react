@@ -3,6 +3,7 @@ import { Head, Link } from '@inertiajs/react';
 import { register } from '@/routes';
 import Nav from '@/components/nav';
 import { Post } from '@/types/post';
+import ListPost from '@/components/Post/ListPost';
 
 export default function welcome({ auth, posts, canRegister }: PageProps<{ posts: Post[], canRegister: boolean }>) {
   console.log('Auth User:', auth.user);
@@ -42,7 +43,7 @@ console.log('Can Register:', canRegister);
               Les derniers aricles publier par nos utilisateurs
             </p>
           </div>
-
+          <ListPost posts={posts} />
         </div>
         
     </>
