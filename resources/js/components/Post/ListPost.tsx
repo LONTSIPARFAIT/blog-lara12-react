@@ -24,7 +24,13 @@ export default function ListPost({posts, showAuthor = true} : Props) {
         }
     }
 
-    c
+    const handleLike = (postId: number) => {
+        // TODO: Implementer la fonction pour liker un article
+        router.post(route('posts.like', postId), {
+            preserveScroll: true,
+            preserveState: true,
+        });
+    }
 
   return (
     <div>
