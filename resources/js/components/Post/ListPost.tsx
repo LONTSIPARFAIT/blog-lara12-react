@@ -1,6 +1,7 @@
-import { Props } from '@/types/post';
+import { Post, Props } from '@/types/post';
 import { usePage, router, Link } from '@inertiajs/react';
 import { useState } from 'react';
+import { Card } from '../ui/card';
 
 export default function ListPost({posts, showAuthor = true} : Props) {
 
@@ -32,9 +33,17 @@ export default function ListPost({posts, showAuthor = true} : Props) {
         });
     }
 
+    const canEditPost = (post: Post) => {
+        return auth.user?.id === post.user_id;
+    }
+
   return (
-    <div>
-      LisPost
+    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 '>
+      {posts.map((post)=>(
+        <Card key={post.id} className='overflow-hidden'>
+            <div className=""></div>
+        </Card>
+      ))}
     </div>
   )
 }
