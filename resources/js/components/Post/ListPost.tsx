@@ -41,7 +41,11 @@ export default function ListPost({posts, showAuthor = true} : Props) {
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 '>
       {posts.map((post)=>(
         <Card key={post.id} className='overflow-hidden'>
-            <div className=""></div>
+            {post.image && (
+                <div className="aspect-w-16 aspect-h-9">
+                    <img src="" alt="" />
+                </div>
+            )}
         </Card>
       ))}
     </div>
