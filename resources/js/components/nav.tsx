@@ -14,7 +14,7 @@ export default function Nav() {
               </div>
               <div className="flex items-center space-x-4">
                 { auth.user ? (
-                  <Link href={route('/dasboard')} className="inline-flex items-center px-4 py-2 border text-sm font-medium rounded-md text-gray-800 hover:text-indigo-600">
+                  <Link href={route('/dasboard')} className="inline-flex items-center px-4 py-2 border text-sm font-medium rounded-md text-white bg-indigo-600  hover:bg-indigo-700">
                     Dashboard
                   </Link>
                 ) : (
