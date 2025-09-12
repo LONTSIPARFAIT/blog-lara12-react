@@ -1,4 +1,6 @@
 import { Link, usePage } from '@inertiajs/react'; 
+import { dashboard, login, register } from '@/routes';
+
 
 export default function Nav() {
     const { auth } = usePage().props as any;
@@ -14,15 +16,15 @@ export default function Nav() {
               </div>
               <div className="flex items-center space-x-4">
                 { auth.user ? (
-                  <Link href={route('/dasboard')} className="inline-flex items-center px-4 py-2 border text-sm font-medium rounded-md text-white bg-indigo-600  hover:bg-indigo-700">
+                  <Link href={dashboard()} className="inline-flex items-center px-4 py-2 border text-sm font-medium rounded-md text-white bg-indigo-600  hover:bg-indigo-700">
                     Dashboard
                   </Link>
                 ) : (
                   <>
-                    <Link href={route('/login')} className="text-gray-900 hover:text-indigo-600">
+                    <Link href={login()} className="text-gray-900 hover:text-indigo-600">
                       Connexion
                     </Link>
-                    <Link href={route('/register')} className="inline-flex items-center px-4 py-2 border text-sm font-medium rounded-md text-white bg-indigo-600  hover:bg-indigo-700">
+                    <Link href={register()} className="inline-flex items-center px-4 py-2 border text-sm font-medium rounded-md text-white bg-indigo-600  hover:bg-indigo-700">
                       Inscription
                     </Link>
                   </>
