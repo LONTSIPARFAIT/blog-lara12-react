@@ -38,7 +38,9 @@ console.log('Can Register:', canRegister);
             <div className="text-center mb-12">
               <h1 className="text-3xl font-extrabold tracking-tight text-gray-800 sm:text-4xl md:text-5xl">Articles Rècents</h1>
             </div>
-            p.
+            <p className="mt-3 max-w-2xl mx-auto text-xl">
+              Les derniers aricles publier par nos utilisateurs
+            </p>
           </div>
 
         </div>
