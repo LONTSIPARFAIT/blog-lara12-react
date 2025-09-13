@@ -62,7 +62,7 @@ export default function ListPost({posts, showAuthor = true} : Props) {
                             <span className="">Par {post.author.name} </span>
                         )
                     }
-                    <span classNam="">{new Date(post.created_at).toLocaleDateString('fr_FR')} </span>
+                    <span className="">{new Date(post.created_at).toLocaleDateString('fr_FR')} </span>
                 </div>
             </CardContent>
 
