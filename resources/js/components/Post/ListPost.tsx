@@ -2,6 +2,7 @@ import { Post, Props } from '@/types/post';
 import { usePage, router, Link } from '@inertiajs/react';
 import { useState } from 'react';
 import { Card, CardContent, CardFooter, CardHeader } from '../ui/card';
+import { Button } from '../ui/button';
 
 export default function ListPost({posts, showAuthor = true} : Props) {
 
