@@ -66,7 +66,7 @@ export default function ListPost({posts, showAuthor = true} : Props) {
                 </div>
             </CardContent>
 
-            <CardFooter className='flex items-center justify-cente'>
+            <CardFooter className='flex items-center justify-cent'>
                 <Button />
             </CardFooter>
 
