@@ -12,7 +12,7 @@ export default function ListPost({posts, showAuthor = true} : Props) {
         if (confirm("Etes-vous sûr de vouloir supprimer cet article ?")) {
 
             setDeletingId(postId);
-            
+
             router.delete(route('posts.destroy', postId), {
                 onSuccess: () => {
                     setDeletingId(null);
@@ -66,10 +66,10 @@ export default function ListPost({posts, showAuthor = true} : Props) {
                 </div>
             </CardContent>
 
-            <CardFooter className='flex items-center justify-cente'>
+            <CardFooter className='flex items-center justify-center'>
                 <Button />
             </CardFooter>
-            
+
         </Card>
       ))}
     </div>
