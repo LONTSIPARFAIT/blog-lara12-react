@@ -3,6 +3,7 @@ import { usePage, router, Link } from '@inertiajs/react';
 import { useState } from 'react';
 import { Card, CardContent, CardFooter, CardHeader } from '../ui/card';
 import { Button } from '../ui/button';
+import { Heart } from 'lucide-react';
 
 export default function ListPost({posts, showAuthor = true} : Props) {
 
@@ -69,6 +70,9 @@ export default function ListPost({posts, showAuthor = true} : Props) {
 
             <CardFooter className='flex items-center justify-center'>
                 <Button />
+                <Button variant='ghost' onclick={()=>handleLike(post.id)} className={`transition-colors ${post.is_liked ? "text-red-600 hover:text-red-700" : "text-gray-600 hover:text-red-700"}`} >
+                   <Heart className='h-6 w-6' fill={post.is_liked ? "currentColor" : "none"} /> 
+                </Button >
             </CardFooter>
 
         </Card>
