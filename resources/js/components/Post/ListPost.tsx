@@ -3,7 +3,7 @@ import { usePage, router, Link } from '@inertiajs/react';
 import { useState } from 'react';
 import { Card, CardContent, CardFooter, CardHeader } from '../ui/card';
 import { Button } from '../ui/button';
-import { Heart } from 'lucide-react';
+import { Eye, Heart } from 'lucide-react';
 
 export default function ListPost({posts, showAuthor = true} : Props) {
 
@@ -79,7 +79,13 @@ export default function ListPost({posts, showAuthor = true} : Props) {
                     </span>
                 </div>
 
-
+                <div className='flex items-center space-x-3' >
+                    <Button className="" >
+                        <Link href='/posts.'>
+                            <Eye />
+                        </Link>
+                    </Button >
+                </div>
 
             </CardFooter>
 
