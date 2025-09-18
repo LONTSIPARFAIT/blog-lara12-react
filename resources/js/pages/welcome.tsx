@@ -1,5 +1,5 @@
 import PageProps from '@/types';
-import { Head, Link } from '@inertiajs/react'; 
+import { Head, Link } from '@inertiajs/react';
 import { register } from '@/routes';
 import Nav from '@/components/nav';
 import { Post } from '@/types/post';
@@ -45,7 +45,7 @@ console.log('Can Register:', canRegister);
           </div>
           <ListPost posts={posts} />
         </div>
-        
+
     </>
   )
 }
