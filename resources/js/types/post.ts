@@ -13,7 +13,7 @@ export interface Post {
     created_at: string
     author: Author
     is_liked: boolean
-    like_counter: number
+    likes_count: number
     user_id: number
 }
 

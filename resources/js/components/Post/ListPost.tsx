@@ -69,10 +69,18 @@ export default function ListPost({posts, showAuthor = true} : Props) {
             </CardContent>
 
             <CardFooter className='flex items-center justify-center'>
-                {/* <Button /> */}
-                <Button variant='ghost' onclick={()=>handleLike(post.id)} className={`transition-colors ${post.is_liked ? "text-red-600 hover:text-red-700" : "text-gray-600 hover:text-red-700"}`} >
-                   <Heart className='h-6 w-6' fill={post.is_liked ? "currentColor" : "none"} /> 
-                </Button >
+                <div className='flex items-center justify-end space-x-2'>
+                    {/* <Button /> */}
+                    <Button variant='ghost' size='icon' onclick={()=>handleLike(post.id)} className={`transition-colors ${post.is_liked ? "text-red-600 hover:text-red-700" : "text-gray-600 hover:text-red-700"}`} >
+                    <Heart className='h-6 w-6' fill={post.is_liked ? "currentColor" : "none"} /> 
+                    </Button >
+                    <span className='text-gray-600' >
+                        {post.likes_count}
+                    </span>
+                </div>
+
+
+
             </CardFooter>
 
         </Card>
